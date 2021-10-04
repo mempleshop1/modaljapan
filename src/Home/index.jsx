@@ -10,7 +10,6 @@ const Home = (props) => {
   const requestFullScreen = () => {
     addShortcutsKeyboard();
     makeWindowFullScreen();
-    props.history.push("/login");
   };
 
   return (

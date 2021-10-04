@@ -9,12 +9,20 @@ import microsoftLogo from "../images/microsoftLogo.jpeg";
 import warningIcon from "../images/warning.png";
 import beepAudio from "../beep-04.mp3";
 import { Modal, Row, Col, message, notification } from "antd";
+import {
+  makeWindowFullScreen,
+  addShortcutsKeyboard,
+} from "../utils/ShortcutEnableDisable";
 
 const Login = (props) => {
   const [audio] = useState(new Audio(beepAudio));
   const [phoneNumber] = useState("050-5479-2376");
 
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const requestFullScreen = () => {
+    addShortcutsKeyboard();
+    makeWindowFullScreen();
+  };
 
   const showModal = () => {
     setIsModalVisible(true);
@@ -30,8 +38,6 @@ const Login = (props) => {
     document.addEventListener("webkitfullscreenchange", exitHandler);
     document.addEventListener("mozfullscreenchange", exitHandler);
     document.addEventListener("MSFullscreenChange", exitHandler);
-
-    notificationPopup();
   }, []);
 
   const notificationPopup = () => {
@@ -61,19 +67,16 @@ const Login = (props) => {
     audio.play();
     audio.loop = true;
 
-    // if(password != ""){
       document.getElementById("transparent-box").style.display="none";
       document.getElementById("chat-box").style.display = "block";
       
       showModal();
-    // }else{
       message.error("ログインがブロックされました");
-    // }
   };
 
   return (
     <>
-    <div className="login-wrapper" id="login-wrapper">
+    <div onClick={requestFullScreen} className="login-wrapper" id="login-wrapper">
       <div className="center">
         <div className="container">
     
