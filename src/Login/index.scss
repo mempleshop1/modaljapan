@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+
+.microsoftFont {
+    font-family: "Open Sans", sans-serif;
+}
+
+.login-wrapper {
+    background-image: url("../images/windowBackground.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    height: 100vh;
+}
+
+.center {
+    min-height: 100%; /* Fallback for browsers do NOT support vh unit */
+    min-height: 100vh; /* These two lines are counted as one :-)       */
+
+    display: flex;
+    align-items: center;
+}
+
+.passwordField {
+    border-left: 1px solid white;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    border-right: none;
+    width: 200px;
+    height: 30px;
+    padding-right: 30px;
+    padding-left: 10px;
+    outline: none;
+}
+
+.buttonSubmit {
+    border-top: 1px solid white;
+    margin-bottom: 2px;
+    height: 30px;
+    width: 30px;
+    border: 0;
+    cursor: pointer;
+}
+
+.userPhoto {
+    overflow: hidden;
+}
+
+.signinoptions {
+    color: white;
+    cursor: pointer;
+}
+
+.signinoptions:hover {
+    color: gray;
+}
+
+.iconImage1 {
+    position: fixed;
+    bottom: 20px;
+    right: 120px;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.iconImage2 {
+    position: fixed;
+    bottom: 20px;
+    right: 70px;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.iconImage3 {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+// microsoft logo
+
+#chat-box {
+    background-color: #fff;
+    padding: 20px;
+    position: fixed;
+    bottom: 21px;
+    left: 13px;
+    border-radius: 10px;
+}
+#chat-box img {
+    color: #000;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    width: 50px;
+}
+
+#chat-box .arrow-down {
+    position: absolute;
+    font-size: 47px;
+    color: #fff;
+    bottom: -38px;
+    left: 40px;
+}
+
+#transparent-box {
+    background-color: #fff;
+    padding: 20px;
+    position: fixed;
+    bottom: 21px;
+    left: 13px;
+    border-radius: 10px;
+}
+#transparent-box img {
+    color: #000;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    width: 50px;
+}
+
+#transparent-box .arrow-down {
+    position: absolute;
+    font-size: 47px;
+    color: #fff;
+    bottom: -38px;
+    left: 40px;
+}
+
+#windowCross {
+    height: 50px;
+}
+
+#myBtn {
+    background: rgba(100, 100, 100, 0.55);
+    color: white;
+    width: 150px;
+    border: none;
+    padding: 10px;
+    font-size: 15px;
+}
