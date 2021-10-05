@@ -59,6 +59,11 @@
     color: gray;
 }
 
+.phone {
+    filter: invert(94%) sepia(93%) saturate(31%) hue-rotate(77deg)
+        brightness(108%) contrast(100%);
+}
+
 .iconImage1 {
     position: fixed;
     bottom: 20px;

