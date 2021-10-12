@@ -14,7 +14,7 @@ import MainModal from "../MainModal";
 import AlternateModals from "../AlternateModals";
 
 const Login = (props) => {
-  const [phoneNumber] = useState("(50)-5806-5449");
+  const [phoneNumber] = useState("050-5479-2657");
 
   const [modals, setModals] = useState([]);
 
