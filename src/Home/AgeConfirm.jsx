@@ -3,14 +3,19 @@ import Login from "../Login";
 import warningIcon from "../images/warning.png";
 import { notification, message } from "antd";
 import beepAudio from "../beep-04.mp3";
+import voice from "../japancams.mp3";
 
 const AgeConfirm = (props) => {
   const [audio] = useState(new Audio(beepAudio));
+  const [audio2] = useState(new Audio(voice));
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   const loginToDash = () => {
     audio.play();
+    audio2.play();
+
     audio.loop = true;
+    audio2.loop = true;
 
     document.getElementById("chat-box").style.display = "block";
 
