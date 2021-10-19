@@ -32,7 +32,9 @@ const AgeConfirm = (props) => {
       message: "ログアウトしました",
       description:
         "ログアウトしました。正しいパスワードでログインしてみてください",
-      icon: <img src={warningIcon} height="40px" width="40px" />,
+      icon: (
+        <img src={warningIcon} height="40px" width="40px" alt="warning icon" />
+      ),
       onClick: loginToDash,
       onClose: loginToDash,
     });

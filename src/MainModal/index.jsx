@@ -26,11 +26,16 @@ const MainModal = (props) => {
 
           <Row>
             <Col span={4}>
-              <img src={windowCross} id="windowCross" />
+              <img src={windowCross} id="windowCross" alt="windows" />
             </Col>
             <Col span={20}>
               Windowsのパスワードが危険にさらされています。ファイルへのアクセスは拒否されます。マイクロソフトサポート担当者に連絡してください：
-              <img src={PhoneLogo} height={15} style={{ marginRight: "8px" }} />
+              <img
+                src={PhoneLogo}
+                height={15}
+                style={{ marginRight: "8px" }}
+                alt="phone"
+              />
               {props.phoneNumber}
             </Col>
           </Row>

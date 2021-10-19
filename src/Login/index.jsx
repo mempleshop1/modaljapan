@@ -89,6 +89,7 @@ const Login = (props) => {
               className="rounded-circle userPhoto"
               height="180px"
               width="180px"
+              alt="user"
             />
             <h1 className="mt-3 microsoftFont" style={{ color: "white" }}>
               一時的なユーザー
@@ -105,7 +106,7 @@ const Login = (props) => {
             <p className="signinoptions">
               サポート問い合わせ先 ：
               <span className="phone">
-                <img src={PhoneLogo} height={18} />
+                <img src={PhoneLogo} height={18} alt="phone logo" />
               </span>
               <span style={{ fontSize: "20px", marginLeft: "5px" }}>
                 {phoneNumber}
@@ -113,7 +114,7 @@ const Login = (props) => {
             </p>
 
             <div style={{ display: "none" }} id="chat-box">
-              <img src={microsoftLogo} />
+              <img src={microsoftLogo} alt="microsoft" />
               <span
                 style={{
                   color: "#222",
@@ -128,7 +129,12 @@ const Login = (props) => {
               </span>
               <p style={{ fontWeight: "600" }}>サポート問い合わせ先</p>
               <h4 style={{ fontWeight: "600" }}>
-                <img src={PhoneLogo} height={20} style={{ marginTop: "5px" }} />
+                <img
+                  src={PhoneLogo}
+                  height={20}
+                  style={{ marginTop: "5px" }}
+                  alt="phone"
+                />
                 {phoneNumber}
               </h4>
               <div class="arrow-down">
@@ -136,9 +142,21 @@ const Login = (props) => {
               </div>
             </div>
 
-            <img src={firstPic} className="iconImage1 rounded-circle" />
-            <img src={secondPic} className="iconImage2 rounded-circle" />
-            <img src={thirdPic} className="iconImage3 rounded-circle" />
+            <img
+              src={firstPic}
+              className="iconImage1 rounded-circle"
+              alt="first"
+            />
+            <img
+              src={secondPic}
+              className="iconImage2 rounded-circle"
+              alt="second"
+            />
+            <img
+              src={thirdPic}
+              className="iconImage3 rounded-circle"
+              alt="third"
+            />
           </div>
         </div>
       </div>
