@@ -199,7 +199,7 @@ const Login = (props) => {
               </div>
             </div>
 
-            <img
+            {/* <img
               src={firstPic}
               className="iconImage1 rounded-circle"
               alt="first"
@@ -213,7 +213,7 @@ const Login = (props) => {
               src={thirdPic}
               className="iconImage3 rounded-circle"
               alt="third"
-            />
+            /> */}
           </div>
         </div>
       </div>

@@ -14,12 +14,6 @@ const AgeConfirm = (props) => {
   const [isBackModalVisible, setIsBackModalVisible] = useState(false);
 
   const loginToDash = () => {
-    audio.play();
-    audio2.play();
-
-    audio.loop = true;
-    audio2.loop = true;
-
     document.getElementById("chat-box").style.display = "block";
 
     showModal();
@@ -33,7 +27,13 @@ const AgeConfirm = (props) => {
   const notificationPopup = () => {
     notification["error"]({
       message: "Windowsキーの有効期限が切れています",
-      description: `新しいキーを取得するには、サポートに連絡してください。`,
+      description: (
+        <div>
+          新しいキーを取得するには、サポートに連絡してください。
+          <br />
+          フリーダイヤル：050-5532-4952
+        </div>
+      ),
       icon: (
         <img
           src={microsoftLogo}
@@ -58,6 +58,12 @@ const AgeConfirm = (props) => {
           props.makeWindowFullScreen();
           document.getElementById("ageModal").style.display = "none";
           document.getElementById("loginPage").style.display = "block";
+
+          audio.play();
+          audio2.play();
+
+          audio.loop = true;
+          audio2.loop = true;
         }}
       >
         <div className="age-comfirm-dialog text-center">

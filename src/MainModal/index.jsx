@@ -15,7 +15,7 @@ const MainModal = (props) => {
         onOk={props.handleOk}
         onCancel={props.handleCancel}
         bodyStyle={{
-          height: "350px",
+          height: "320px",
           fontSize: "18px",
           fontWeight: "bold",
           padding: "0px",
@@ -51,9 +51,7 @@ const MainModal = (props) => {
               !!アラート!!
               <br /> エラーコード：- 0xdf929.dll
               <br />
-              ウイルススパイウェアが見つかりました
-              これにより、コンピュータの速度が低下する可能性があります
-              バイナリシステムも、コンピュータのストレージシステムに直接影響するこの深刻な問題の影響を受ける可能性があります{" "}
+              このウイルスは、個人データをハッカーに送信していることが判明しています。マイクロソフトのサポートに連絡して、すぐに削除してください。
               <br />
               <img
                 src={PhoneLogo}
