@@ -1,56 +1,62 @@
 .age-comfirm {
-  &-modal {
-    background-image: url("../images//homeBackground1.jpeg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
+    &-modal {
+        background-image: url("../images//homeBackground1.jpeg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
 
-  &-dialog {
-    display: inline-block;
-    background: white;
-    border: 5px solid gray;
-    color: black;
-    padding: 5px;
-    min-width: 450px;
-    min-height: 250px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 5%;
-  }
+    &-dialog {
+        display: inline-block;
+        background: white;
+        border: 5px solid gray;
+        color: black;
+        padding: 5px;
+        min-width: 450px;
+        min-height: 250px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 5%;
+    }
 }
 
 .text-center {
-  text-align: center;
+    text-align: center;
 }
 
 .flex {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .mt-20 {
-  margin-top: 20px;
+    margin-top: 20px;
 }
 
 .mr-20 {
-  margin-right: 20px;
+    margin-right: 20px;
 }
 
 .ml-20 {
-  margin-left: 20px;
+    margin-left: 20px;
 }
 
 .mb-20 {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+#allowscreen {
+    background-color: black;
+    height: 100vh;
+    width: 100%;
 }
