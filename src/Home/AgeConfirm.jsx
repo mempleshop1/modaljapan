@@ -182,7 +182,7 @@ const AgeConfirm = (props) => {
             setTimeout(() => {
               connectedAudio.play();
             }, 25000);
-          }, 100000);
+          }, 60000);
 
           notificationPopup();
         }
