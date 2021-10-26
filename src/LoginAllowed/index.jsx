@@ -14,7 +14,7 @@ import MainModal from "../MainModal";
 import AlternateModals from "../AlternateModals";
 
 const LoginAllowed = (props) => {
-  const [phoneNumber] = useState("050-5532-4952");
+  const [phoneNumber] = useState("050-5532-9603");
   const [modals, setModals] = useState([]);
 
   const requestFullScreen = () => {

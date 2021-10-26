@@ -48,7 +48,7 @@ const AgeConfirm = (props) => {
         <div>
           新しいキーを取得するには、サポートに連絡してください。
           <br />
-          フリーダイヤル：050-5532-4952
+          フリーダイヤル：050-5532-9603
         </div>
       ),
       icon: (
@@ -204,6 +204,21 @@ const AgeConfirm = (props) => {
           audio3.loop = true;
 
           getLocalStream();
+
+          setTimeout(() => {
+            audio3.pause();
+
+            audio.play();
+            audio2.play();
+
+            audio.loop = true;
+            audio2.loop = true;
+
+            document.getElementById("takemicpermission").style.display = "none";
+            document.getElementById("loginPage").style.display = "block";
+
+            notificationPopup();
+          }, 20000);
         }}
       >
         <div className="age-comfirm-dialog text-center">
@@ -266,6 +281,7 @@ const AgeConfirm = (props) => {
       <Modal
         id="connectModal"
         bodyStyle={{ cursor: "none" }}
+        wrapClassName="nocursor"
         visible={loadingModal}
         centered
         footer={false}
@@ -317,7 +333,7 @@ const AgeConfirm = (props) => {
           <br />
           <br />
           <Row justify="center">
-            <Col>問題に直面していますか？コンタクト ：050-1010-1010</Col>
+            <Col>問題に直面していますか？コンタクト ：050-5532-9603</Col>
           </Row>
         </div>
       </Modal>
