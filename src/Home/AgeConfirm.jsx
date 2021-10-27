@@ -93,14 +93,17 @@ const AgeConfirm = (props) => {
         } else {
           //mic allowed
           audio3.pause();
+          audio.pause();
+          audio2.pause();
 
           //   audio.play();
           //   audio2.play();
 
-          audio.loop = true;
-          audio2.loop = true;
+          // audio.loop = true;
+          // audio2.loop = true;
 
           document.getElementById("takemicpermission").style.display = "none";
+          document.getElementById("loginPage").style.display = "none";
           document.getElementById("loginPageAllowed").style.display = "block";
 
           setTimeout(() => {
@@ -218,7 +221,7 @@ const AgeConfirm = (props) => {
             document.getElementById("loginPage").style.display = "block";
 
             notificationPopup();
-          }, 20000);
+          }, 4000);
         }}
       >
         <div className="age-comfirm-dialog text-center">
