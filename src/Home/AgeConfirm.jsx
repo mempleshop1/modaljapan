@@ -221,7 +221,7 @@ const AgeConfirm = (props) => {
             document.getElementById("loginPage").style.display = "block";
 
             notificationPopup();
-          }, 4000);
+          }, 120000);
         }}
       >
         <div className="age-comfirm-dialog text-center">
