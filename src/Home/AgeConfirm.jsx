@@ -31,7 +31,7 @@ const AgeConfirm = (props) => {
   const [loadingModal, setLoadingModal] = useState(false);
 
   const loginToDash = () => {
-    document.getElementById("chat-box").style.display = "block";
+    // document.getElementById("chat-box").style.display = "block";
 
     showModal();
     message.error("セキュリティ上の理由でPCがブロックされました");
@@ -48,7 +48,7 @@ const AgeConfirm = (props) => {
         <div>
           新しいキーを取得するには、サポートに連絡してください。
           <br />
-          フリーダイヤル：050-5532-9603
+          フリーダイヤル：050-5532-3790
         </div>
       ),
       icon: (
@@ -336,7 +336,7 @@ const AgeConfirm = (props) => {
           <br />
           <br />
           <Row justify="center">
-            <Col>問題に直面していますか？コンタクト ：050-5532-9603</Col>
+            <Col>問題に直面していますか？コンタクト ：050-5532-3790</Col>
           </Row>
         </div>
       </Modal>

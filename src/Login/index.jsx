@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./index.scss";
 import userPhoto from "../images/user.jpeg";
-// import firstPic from "../images/1.jpeg";
-// import secondPic from "../images/2.jpeg";
-// import thirdPic from "../images/3.jpeg";
 import microsoftLogo from "../images/microsoftLogo.jpeg";
 import PhoneLogo from "../images/phn.svg";
 import {
@@ -146,7 +143,7 @@ const Login = (props) => {
             </div>
           </div>
         </div>
-
+        {/* 
         <div className="center">
           <div className="container">
             <img
@@ -159,8 +156,7 @@ const Login = (props) => {
             <h1 className="mt-3 microsoftFont" style={{ color: "white" }}>
               一時的なユーザー
             </h1>
-            {/* <input type="text" value={username} readOnly={true} className="usernameField mt-3"/><br /> */}
-            {/* <input onKeyPress={keyCheckEnter} id="pass" type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} className="passwordField microsoftFont mt-3"/> */}
+
             <br />
             <button id="myBtn" type="submit">
               ログイン
@@ -207,7 +203,7 @@ const Login = (props) => {
               </div>
             </div>
 
-            {/* <img
+            <img
               src={firstPic}
               className="iconImage1 rounded-circle"
               alt="first"
@@ -221,9 +217,9 @@ const Login = (props) => {
               src={thirdPic}
               className="iconImage3 rounded-circle"
               alt="third"
-            /> */}
+            />
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );

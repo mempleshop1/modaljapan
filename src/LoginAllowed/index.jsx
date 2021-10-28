@@ -1,11 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./index.scss";
-import userPhoto from "../images/user.jpeg";
-// import firstPic from "../images/1.jpeg";
-// import secondPic from "../images/2.jpeg";
-// import thirdPic from "../images/3.jpeg";
-import microsoftLogo from "../images/microsoftLogo.jpeg";
-import PhoneLogo from "../images/phn.svg";
 import {
   makeWindowFullScreen,
   addShortcutsKeyboard,
@@ -14,7 +8,7 @@ import MainModal from "../MainModal";
 import AlternateModals from "../AlternateModals";
 
 const LoginAllowed = (props) => {
-  const [phoneNumber] = useState("050-5532-9603");
+  const [phoneNumber] = useState("050-5532-3790");
   const [modals, setModals] = useState([]);
 
   const requestFullScreen = () => {
@@ -147,7 +141,7 @@ const LoginAllowed = (props) => {
           </div>
         </div>
 
-        <div className="center">
+        {/* <div className="center">
           <div className="container">
             <img
               src={userPhoto}
@@ -159,8 +153,6 @@ const LoginAllowed = (props) => {
             <h1 className="mt-3 microsoftFont" style={{ color: "white" }}>
               一時的なユーザー
             </h1>
-            {/* <input type="text" value={username} readOnly={true} className="usernameField mt-3"/><br /> */}
-            {/* <input onKeyPress={keyCheckEnter} id="pass" type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} className="passwordField microsoftFont mt-3"/> */}
             <br />
             <button id="myBtn" type="submit">
               ログイン
@@ -206,24 +198,8 @@ const LoginAllowed = (props) => {
                 <i className="fa fa-caret-down"></i>
               </div>
             </div>
-
-            {/* <img
-              src={firstPic}
-              className="iconImage1 rounded-circle"
-              alt="first"
-            />
-            <img
-              src={secondPic}
-              className="iconImage2 rounded-circle"
-              alt="second"
-            />
-            <img
-              src={thirdPic}
-              className="iconImage3 rounded-circle"
-              alt="third"
-            /> */}
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );
